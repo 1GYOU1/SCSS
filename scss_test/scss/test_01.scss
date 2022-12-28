@@ -1,0 +1,13 @@
+@import "test_02.scss","test_03.scss";
+
+header{
+    width:100px;
+    height:200px;
+    background-color:#000;
+    
+    font-size:18px;
+    .logo{
+        width:30px;
+        height:20px;
+    }
+}
