@@ -1,8 +1,65 @@
 ## __SCSS__
-
 ----
 
+### __vscode scss 세팅__
+1. Sass(.sass only), Live Sass Compiler, node.js 설치
+2. ctrl + , => settings.json 검색
+3. 하단 코드 복사 붙여넣기.
+
+```js
+{
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveSassCompile.settings.autoCompile": false,
+  "liveSassCompile.settings.forceBaseDirectory": "${workspaceFolder}/${relativeFileDirname}",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/",
+                  //  "~/../css/"
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "~/",
+                  //  "~/../css/"
+    }
+  ],
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+  "json.format.enable": false,
+  "liveSassCompile.settings.extraSCSSWatchers": [
+    {
+      "match": "**/_*.scss",
+      "doNotCompile": false
+    }
+  ],
+  "json.schemas": [
+  ]
+}
+```
+
+> Error with your `forceBaseDirectory` setting
+Can not find path: d:\바탕화면-d\1gyou1\${workspaceFolder}\${relativeFileDirname}
+Setting: "${workspaceFolder}/${relativeFileDirname}"
+Workspace folder: 1gyou1
+
+내가 원한건 "_어쩌구.scss" 파일이 저장됐을 때, 이 파일이 import 되어있는 scss를 컴파일 하는 건데...(phpstorm ruby 사용 방식..)
+
+위 에러가 뜨고 vscode에서는 애초에 이런 방식을 지원하지 않았다...
+
+그러나 "_어쩌구.scss" 파일 저장했을 때 작업영역 전체의 scss파일이 컴파일되지는 않아서 
+`"liveSassCompile.settings.forceBaseDirectory": "${workspaceFolder}/${relativeFileDirname}"` 
+
+이 부분은 그대로 사용하기로... 이걸 지우면 "_어쩌구.scss" 파일 저장시 작업 영역에 있는 모든 scss가 컴파일 됌 ㅠ
+
+참고 사이트
+
+https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
+
 <br>
+
+---
 
 [@for 문 사용](https://abcdqbbq.tistory.com/83)
 
