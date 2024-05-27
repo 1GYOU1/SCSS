@@ -60,6 +60,17 @@ https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/setting
 <br>
 
 ---
+### __phpstorm scss 세팅__
+
+![세팅1](https://github.com/1GYOU1/SCSS/assets/90018379/5f49dd1e-ec6f-47c1-9b04-914c380bb274)
+
+![세팅2](https://github.com/1GYOU1/SCSS/assets/90018379/c0d08c15-06e5-4ad3-92f9-6b9ddc29424e)
+
+![세팅3](https://github.com/1GYOU1/SCSS/assets/90018379/c5fe99a7-db1c-4c9f-beea-c56bd2b188cd)
+
+<br>
+
+---
 
 [@for 문 사용](https://abcdqbbq.tistory.com/83)
 
