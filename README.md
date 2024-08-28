@@ -44,14 +44,25 @@ Can not find path: d:\바탕화면-d\1gyou1\${workspaceFolder}\${relativeFileDir
 Setting: "${workspaceFolder}/${relativeFileDirname}"
 Workspace folder: 1gyou1
 
-내가 원한건 "_어쩌구.scss" 파일이 저장됐을 때, 이 파일이 import 되어있는 scss를 컴파일 하는 건데...(phpstorm ruby 사용 방식..)
+**_파일명.scss 연결 css 자동 업데이트**
 
-위 에러가 뜨고 vscode에서는 애초에 이런 방식을 지원하지 않았다...
+파일구조
+- _test.scss
+- main.scss -> test.scss import
+- main.css -> _test.scss가 업데이트 되면 자동으로 업데이트 되어야하는데 vscode에서는 지원하지 않음.
+- main.css.map
 
-그러나 "_어쩌구.scss" 파일 저장했을 때 작업영역 전체의 scss파일이 컴파일되지는 않아서 
+"_파일명.scss" 파일이 저장됐을 때, 이 파일이 import 되어있는 scss가 자동으로 업데이트 되어 컴파일 하는 것을 원했는데(phpstorm ruby 자동 업데이트 컴파일 방식) vscode 에디터에서는 지원하지 않음. import 되어있는 scss 파일에서 다시 업데이트 시켜줘야 관련 css, map 파일이 업데이트 됨.
+
+**결론 : 위 에러가 뜨고 vscode에서는 import된 파일 자동 업데이트 기능 지원하지 않음..**
+
+<br>
+
 `"liveSassCompile.settings.forceBaseDirectory": "${workspaceFolder}/${relativeFileDirname}"` 
 
-이 부분은 그대로 사용하기로... 이걸 지우면 "_어쩌구.scss" 파일 저장시 작업 영역에 있는 모든 scss가 컴파일 됌 ㅠ
+이 부분은 그대로 사용, 이 부분을 지우면 "_파일명.scss" 파일 저장시 작업 영역에 있는 모든 scss가 컴파일 된다.
+* 각 SCSS 파일의 컴파일 범위를 해당 파일이 위치한 디렉토리로 제한, 따라서 프로젝트 전체가 아닌, 현재 작업 중인 SCSS 파일과 관련된 CSS 파일만 업데이트
+
 
 참고 사이트
 
